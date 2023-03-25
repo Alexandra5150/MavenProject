@@ -33,34 +33,20 @@ public class Exercitiu {
 		driver.quit();		
 	}
 	
-	@Test(priority = 1)
+	@Test
 	public void Login() {
 		
-		WebElement login = driver.findElement(By.linkText("Login"));
-		login.click();
+        WebElement login = driver.findElement(By.linkText("Login"));
+        login.click();
+
+        WebElement username = driver.findElement(By.id("log"));
+        username.sendKeys("TestUser");
+
+        WebElement password = driver.findElement(By.id("password"));
+        password.sendKeys("12345@67890");
+
+        WebElement loginSubmit = driver.findElement(By.className("submit_button"));
+        loginSubmit.click();
 	}
-	
-	@Test(priority = 2)
-	public void username() {
 		
-		WebElement username = driver.findElement(By.id("log"));
-		username.sendKeys("TestUser");
-	}
-	
-	@Test(priority = 3)
-	public void password() {
-		
-		WebElement password = driver.findElement(By.id("password"));
-		password.sendKeys("12345@67890");
-	}
-	
-	
-	@Test(priority = 4)
-	public void loginSubmit() {
-		
-		WebElement loginSubmit = driver.findElement(By.className("submit_button"));
-		loginSubmit.click();
-	}
-	
-	
 }
