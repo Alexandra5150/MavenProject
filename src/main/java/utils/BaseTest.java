@@ -1,5 +1,6 @@
 package utils;
 
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.AfterClass;
@@ -8,6 +9,7 @@ import org.testng.annotations.BeforeClass;
 public class BaseTest {
 
 	public WebDriver driver;
+	public JavascriptExecutor jse;
 	
 	@BeforeClass
 	public void setup() {
@@ -15,6 +17,7 @@ public class BaseTest {
 		driver = new FirefoxDriver();
 		driver.manage().window().maximize();
 		driver.get("https://keybooks.ro/");
+		jse = (JavascriptExecutor)driver;
 	}
 	
 	
