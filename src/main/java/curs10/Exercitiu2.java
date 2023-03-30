@@ -52,10 +52,10 @@ public class Exercitiu2 extends BaseTest {
     @Test 
     public void checkBook() throws InterruptedException {
         
-          List<WebElement> theForestBook = driver.findElements(By.className("sc_tabs_title"));
+          List<WebElement> category = driver.findElements(By.className("sc_tabs_title"));
            
-            for (WebElement book : theForestBook) {
-                    book.click();
+            for (WebElement categoryCheck : category) {
+                    categoryCheck.click();
                     assertTrue(driver.findElement(By.linkText("The forest")).isDisplayed());       
           }
      
