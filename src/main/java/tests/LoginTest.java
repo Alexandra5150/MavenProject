@@ -13,6 +13,7 @@ public class LoginTest extends BaseTest {
 	@Test
 	public void loginTest() {
 		
+		//assertTrue(false);
 		MenuPage menu = new MenuPage(driver);
 		menu.navigateTo(menu.loginLink);
 		//menu.navigateTo(menu.contactsLink);

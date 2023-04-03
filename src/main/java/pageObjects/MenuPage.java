@@ -17,7 +17,7 @@ public class MenuPage {
 	public By contactsLink = By.linkText("CONTACTS");
 	public By singleAuthorLink = By.linkText("SINGLE AUTHOR");
 	public By searchButton = By.cssSelector("div[class=\"search_form_wrap\"] button[title=\"Open search\"]");
-	
+	public By shopLink = By.linkText("BOOKS");
 	
 	//driver.findElement(By.linkText("Login")).click();
 	//     indentificare element                  + actiune pe element
