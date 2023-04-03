@@ -15,7 +15,8 @@ public class MenuPage {
 	//locatori
 	public By loginLink = By.linkText("Login");
 	public By contactsLink = By.linkText("CONTACTS");
-	
+	public By singleAuthorLink = By.linkText("SINGLE AUTHOR");
+	public By searchButton = By.cssSelector("div[class=\"search_form_wrap\"] button[title=\"Open search\"]");
 	
 	
 	//driver.findElement(By.linkText("Login")).click();
