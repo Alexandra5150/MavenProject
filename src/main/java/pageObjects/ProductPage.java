@@ -14,11 +14,13 @@ public class ProductPage extends BaseTest {
 	
 	
 	public By addToCartButton = By.cssSelector("button[class=\"single_add_to_cart_button button alt\"]");
+	public By viewCartButton = By.cssSelector("div[class=\"woocommerce-message\"] a[class=\"button wc-forward\"]");
 	
 	
 	public void addToCart () {
 		
 		driver.findElement(addToCartButton).click();
+		driver.findElement(viewCartButton).click();
 		
 	}
 	

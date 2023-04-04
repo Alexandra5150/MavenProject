@@ -10,6 +10,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
 
+import pageObjects.CartPage;
 import pageObjects.LoginPage;
 import pageObjects.MenuPage;
 import pageObjects.ProductPage;
@@ -36,17 +37,34 @@ public class Curs12Exercitiu3 extends BaseTest {
 		ProductPage addItemToCart = new ProductPage(driver);
 		addItemToCart.addToCart();
 		
-		//“The story about me” has been added to your cart.
+//		WebElement addedToCartSuccess = driver.findElement(By.cssSelector("div[class=\"woocommerce-message\"]"));
+//		assertEquals(addedToCartSuccess.getText(), "“The story about me” has been added to your cart.");
 		
-        
+		assertEquals(driver.getCurrentUrl(),"https://keybooks.ro/cart/");
+				       
 	}
 	
-//	@Test(priority=2)
-//	public void viewCartAndCheckout () {
-//		
-//		
-//		
-//	}
+	
+	@Test(priority=2)
+	public void viewCartAndCheckout () {
+		
+		CartPage cartPage = new CartPage(driver);
+		cartPage.quantityIncrease();		
+		cartPage.updateCart();
+		
+//		WebElement cartUpdateSuccess = driver.findElement(By.cssSelector("div[class=\"woocommerce-message\"]"));
+//		assertEquals(cartUpdateSuccess.getText(), "Cart updated.");
+		
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+		wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("div[class=\"wc-proceed-to-checkout\"] a")));
+		
+		cartPage.proceedToCheckout();
+		assertEquals(driver.getCurrentUrl(),"https://keybooks.ro/checkout/");
+		
+		assertTrue(((WebElement) cartPage.billingDetailsText).isDisplayed());
+		assertTrue(((WebElement) cartPage.additionalInformationText).isDisplayed());
+		
+	}
 	
 	
 }

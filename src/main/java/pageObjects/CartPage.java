@@ -13,7 +13,28 @@ public class CartPage extends BaseTest {
 	}
 	
 	
-	public By nameField = By.cssSelector("input[placeholder=\"Name*\"]");
+	public By qtyIncreaseArrow = By.cssSelector("span[class=\"q_inc\"]");
+	public By updateCartButton = By.cssSelector("button[name=\"update_cart\"]");
+	public By proceedCheckoutButton = By.cssSelector("div[class=\"wc-proceed-to-checkout\"] a");
+	public By billingDetailsText = By.cssSelector("div[class=\"woocommerce-billing-fields\"] h3");
+	public By additionalInformationText = By.cssSelector("div[class=\"woocommerce-additional-fields\"] h3");
+	
+	
+	public void quantityIncrease () {		
+		driver.findElement(qtyIncreaseArrow).click();		
+	}
+	
+	
+	public void updateCart () {		
+		driver.findElement(updateCartButton).click();		
+	}
+	
+	
+	public void proceedToCheckout () {		
+		driver.findElement(proceedCheckoutButton).click();		
+	}
+	
+	
 	
 
 }
