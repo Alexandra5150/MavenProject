@@ -18,6 +18,11 @@ public class MenuPage {
 	public By singleAuthorLink = By.linkText("SINGLE AUTHOR");
 	public By searchButton = By.cssSelector("div[class=\"search_form_wrap\"] button[title=\"Open search\"]");
 	public By shopLink = By.linkText("BOOKS");
+	public By facebookIcon = By.cssSelector("div[class=\"top_panel_top_user_area\"] span[class=\"icon-facebook\"]");
+	public By twitterIcon = By.cssSelector("div[class=\"top_panel_top_user_area\"] span[class=\"icon-twitter\"]");
+	public By instagramIcon = By.cssSelector("div[class=\"top_panel_top_user_area\"] span[class=\"icon-instagramm\"]");
+	public By username = By.cssSelector("span[class=\"user_name\"]");
+	
 	
 	//driver.findElement(By.linkText("Login")).click();
 	//     indentificare element                  + actiune pe element

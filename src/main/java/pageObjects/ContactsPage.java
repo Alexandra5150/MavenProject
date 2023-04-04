@@ -35,10 +35,9 @@ public class ContactsPage extends BaseTest {
 		driver.findElement(locator).click();		
 	}
 	
-	public void redirectMap() {
-		
-		driver.findElement(outsideMap).click();
-		
+	
+	public void redirectMap() {		
+		driver.findElement(outsideMap).click();		
 	}
 	
 	
