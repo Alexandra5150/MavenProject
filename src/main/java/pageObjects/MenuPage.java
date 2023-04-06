@@ -2,6 +2,8 @@ package pageObjects;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 
 public class MenuPage {
 	
@@ -22,6 +24,9 @@ public class MenuPage {
 	public By twitterIcon = By.cssSelector("div[class=\"top_panel_top_user_area\"] span[class=\"icon-twitter\"]");
 	public By instagramIcon = By.cssSelector("div[class=\"top_panel_top_user_area\"] span[class=\"icon-instagramm\"]");
 	public By username = By.cssSelector("span[class=\"user_name\"]");
+	public By logoutButton = By.cssSelector("li[class=\"menu_user_logout\"]>a");
+	public By blogLink = By.linkText("BLOG");
+	public By postFormatsLink = By.linkText("Post Formats");
 	
 	
 	//driver.findElement(By.linkText("Login")).click();
@@ -35,11 +40,20 @@ public class MenuPage {
 		driver.findElement(locator).click();				
 	}
 	
+	public void hoverElement (By locator) {		
+		WebElement element = driver.findElement(locator);
+		Actions action = new Actions(driver);
+		action.moveToElement(element).perform();		
+	}
+	
 	//exemplu de teste:
 	//MenuPage menu = new MenuPage(driver);
 	//menu.navigateTo(menu.loginlink);
 	//menu.navigateTo(menu.contactsLink);
 	
-	
+	public void logoutFromApp() {
+		
+		driver.findElement(logoutButton).click();
+	}
 	
 }
