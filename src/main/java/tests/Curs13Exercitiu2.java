@@ -24,9 +24,13 @@ public class Curs13Exercitiu2 extends BaseTest {
 		
 		MenuPage menu = new MenuPage(driver);
 		
-		List<String> browserTabs = new ArrayList<> (driver.getWindowHandles());
+		
+		//rezolvare cu for
+		//System.out.println(browserTabs.size());
 		
 		menu.navigateTo(menu.facebookIcon);
+		
+		List<String> browserTabs = new ArrayList<> (driver.getWindowHandles());
 		driver.switchTo().window(browserTabs.get(1));		
 		assertEquals(driver.getCurrentUrl(),"https://www.facebook.com/keytraining.ro");		
 		driver.close();
