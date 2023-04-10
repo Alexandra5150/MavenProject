@@ -37,9 +37,10 @@ public class Curs12Exercitiu3 extends BaseTest {
 		ProductPage addItemToCart = new ProductPage(driver);
 		addItemToCart.addToCart();
 		
-//		WebElement addedToCartSuccess = driver.findElement(By.cssSelector("div[class=\"woocommerce-message\"]"));
-//		assertEquals(addedToCartSuccess.getText(), "“The story about me” has been added to your cart.");
+		WebElement addedToCartSuccess = driver.findElement(By.cssSelector("div[class=\"woocommerce-message\"]"));
+		assertTrue(addedToCartSuccess.getText().contains("The story about me” has been added to your cart."));
 		
+		addItemToCart.viewCart();
 		assertEquals(driver.getCurrentUrl(),"https://keybooks.ro/cart/");
 				       
 	}
@@ -52,8 +53,8 @@ public class Curs12Exercitiu3 extends BaseTest {
 		cartPage.quantityIncrease();		
 		cartPage.updateCart();
 		
-//		WebElement cartUpdateSuccess = driver.findElement(By.cssSelector("div[class=\"woocommerce-message\"]"));
-//		assertEquals(cartUpdateSuccess.getText(), "Cart updated.");
+		WebElement cartUpdateSuccess = driver.findElement(By.cssSelector("div[class=\"woocommerce-message\"]"));
+		assertTrue(cartUpdateSuccess.getText().contains("Cart updated."));
 		
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 		wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("div[class=\"wc-proceed-to-checkout\"] a")));
@@ -63,6 +64,8 @@ public class Curs12Exercitiu3 extends BaseTest {
 		
 		assertTrue(((WebElement) cartPage.billingDetailsText).isDisplayed());
 		assertTrue(((WebElement) cartPage.additionalInformationText).isDisplayed());
+		
+		assertTrue(((WebElement) cartPage.billingDetailsText).isDisplayed());
 		
 	}
 	

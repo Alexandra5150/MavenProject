@@ -1,8 +1,13 @@
 package pageObjects;
 
 import utils.BaseTest;
+
+import java.time.Duration;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
 import pageObjects.MenuPage;
 import utils.BaseTest;
@@ -17,16 +22,15 @@ public class SingleAuthorPage extends BaseTest {
 	}
 	
 	
-//	public By dramaSkill = By.cssSelector("div[id=\"sc_skills_diagram_1411881547\"] div[data-stop=\"95\"]");
-//	public By biographySkill = By.cssSelector("div[id=\"sc_skills_diagram_1411881547\"] div[data-stop=\"75\"]");
-//	public By cookbooksSkill = By.cssSelector("div[id=\"sc_skills_diagram_1411881547\"] div[data-stop=\"82\"]");
 	public By dramaSkillData = By.cssSelector("div[data-stop=\"95\"]");
 	public By biographySkillData = By.cssSelector("div[data-stop=\"75\"]");
 	public By cookbooksSkillData = By.cssSelector("div[data-stop=\"82\"]");
 	
 	
-//	public void checkSkill (By locator) {
-//		driver.findElement(locator).isDisplayed();				
-//	}
+    public boolean checkSkill (By locator) {
+       WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10)); 
+       wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
+       return driver.findElement(locator).isDisplayed();                
+   }
 	
 }

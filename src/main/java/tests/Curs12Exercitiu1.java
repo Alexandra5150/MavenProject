@@ -20,26 +20,11 @@ public class Curs12Exercitiu1 extends BaseTest {
 		MenuPage menu = new MenuPage(driver);
 		menu.navigateTo(menu.singleAuthorLink);
 		
-		SingleAuthorPage singleAuthor = new SingleAuthorPage(driver);
+		SingleAuthorPage singleAuthor = new SingleAuthorPage(driver);		
 		
-		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-		
-		wait.until(ExpectedConditions.presenceOfElementLocated(singleAuthor.dramaSkillData));
-		wait.until(ExpectedConditions.presenceOfElementLocated(singleAuthor.biographySkillData));
-		wait.until(ExpectedConditions.presenceOfElementLocated(singleAuthor.cookbooksSkillData));
-		
-		WebElement finish = driver.findElement(By.cssSelector("div[id=\"sc_skills_diagram_1411881547\"] div[data-stop=\"95\"]"));
-		assertTrue(finish.isDisplayed());
-		
-		assertTrue(((WebElement) singleAuthor.dramaSkillData).isDisplayed());
-		assertTrue(((WebElement) singleAuthor.biographySkillData).isDisplayed());
-		assertTrue(((WebElement) singleAuthor.cookbooksSkillData).isDisplayed());
-		
-		
-		
-		
-		
+        assertTrue(singleAuthor.checkSkill(singleAuthor.dramaSkillData));
+        assertTrue(singleAuthor.checkSkill(singleAuthor.biographySkillData));
+        assertTrue(singleAuthor.checkSkill(singleAuthor.cookbooksSkillData));						
 	}	
-	
-	
+		
 }

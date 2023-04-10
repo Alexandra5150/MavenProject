@@ -20,31 +20,33 @@ public class Curs13Exercitiu2 extends BaseTest {
 
 	
 	@Test
-	public void checkSocialMedia () {
+	public void checkSocialMedia () {		
 		
-		MenuPage menu = new MenuPage(driver);
-		
-		
-		//rezolvare cu for
-		//System.out.println(browserTabs.size());
-		
-		menu.navigateTo(menu.facebookIcon);
-		
-		List<String> browserTabs = new ArrayList<> (driver.getWindowHandles());
-		driver.switchTo().window(browserTabs.get(1));		
-		assertEquals(driver.getCurrentUrl(),"https://www.facebook.com/keytraining.ro");		
-		driver.close();
-		
-		menu.navigateTo(menu.twitterIcon);
-		driver.switchTo().window(browserTabs.get(1));
-		assertEquals(driver.getCurrentUrl(),"https://twitter.com/");	
-		driver.close();
-		
-		menu.navigateTo(menu.instagramIcon);
-		driver.switchTo().window(browserTabs.get(1));
-		assertEquals(driver.getCurrentUrl(),"https://www.instagram.com/");	
-		driver.close();
-										
+        MenuPage menu = new MenuPage(driver);
+        
+        By[] icons = new By[3];
+        icons[0] = menu.instagramIcon;
+        icons[1] = menu.facebookIcon;
+        icons[2] = menu.twitterIcon;
+       
+        String[] expectedURLS = new String[3];
+        expectedURLS[0] = "https://www.instagram.com/";
+        expectedURLS[1] = "https://www.facebook.com/keytraining.ro";
+        expectedURLS[2] = "https://twitter.com/";
+
+       
+        for(int i=0; i<icons.length; i++) {
+           
+            menu.navigateTo(icons[i]);
+
+            List<String> browserTabs = new ArrayList<>(driver.getWindowHandles());
+            driver.switchTo().window(browserTabs.get(1));
+            assertEquals(driver.getCurrentUrl(),expectedURLS[i]);
+          
+            driver.close(); 
+
+            driver.switchTo().window(browserTabs.get(0));
+        }
 	}
 				
 }

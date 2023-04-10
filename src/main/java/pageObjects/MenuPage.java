@@ -10,8 +10,7 @@ public class MenuPage {
 	public WebDriver driver;
 	
 	public MenuPage(WebDriver driver) {
-		this.driver = driver;
-		
+		this.driver = driver;		
 	}
 	
 	//locatori
@@ -27,6 +26,7 @@ public class MenuPage {
 	public By logoutButton = By.cssSelector("li[class=\"menu_user_logout\"]>a");
 	public By blogLink = By.linkText("BLOG");
 	public By postFormatsLink = By.linkText("Post Formats");
+	public By homePageButton = By.cssSelector("div[class=\"top_panel_middle\"] a[href=\"https://keybooks.ro/\"]");
 	
 	
 	//driver.findElement(By.linkText("Login")).click();
@@ -45,12 +45,7 @@ public class MenuPage {
 		Actions action = new Actions(driver);
 		action.moveToElement(element).perform();		
 	}
-	
-	//exemplu de teste:
-	//MenuPage menu = new MenuPage(driver);
-	//menu.navigateTo(menu.loginlink);
-	//menu.navigateTo(menu.contactsLink);
-	
+		
 	public void logoutFromApp() {
 		
 		driver.findElement(logoutButton).click();

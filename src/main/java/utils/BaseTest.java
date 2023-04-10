@@ -43,7 +43,7 @@ public class BaseTest {
 	
 	
 	
-	@AfterMethod
+	//@AfterMethod
 	public void recordFailure (ITestResult result) throws IOException {
 		
 		if(ITestResult.FAILURE == result.getStatus()) {

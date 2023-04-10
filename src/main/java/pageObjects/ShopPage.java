@@ -20,6 +20,12 @@ public class ShopPage extends BaseTest {
 	public By dropDown = By.name("orderby");
 	public By sliderInitialPosition = By.cssSelector("span[style='left: 0%;']");
 	public By sliderFinalPosition = By.cssSelector("span[style='left: 100%;']");
+	public By nextPageArrow = By.cssSelector("a[class=\"next page-numbers\"]");
+	
+	
+	public void navigateTo (By locator) {
+		driver.findElement(locator).click();				
+	}
 	
 	
 	public void dragAndDrop(By locator, int x, int y) {
@@ -29,9 +35,7 @@ public class ShopPage extends BaseTest {
 		action.dragAndDropBy(element, x, y).perform();
 		
 		//action.clickAndHold(element).moveByOffset(x, y).release().build().perform();
-		//action.sendKeys(Keys.TAB).click().sendKeys(Keys.TAB).perform();
-		
-		
+		//action.sendKeys(Keys.TAB).click().sendKeys(Keys.TAB).perform();				
 	}
 	
 	

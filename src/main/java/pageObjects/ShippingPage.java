@@ -15,7 +15,7 @@ public class ShippingPage {
 	}
 	
 	public By dropDownCountry = By.name("shipping_country");
-	public By dropDownProvince = By.cssSelector("span[class=\"select2-search select2-search--dropdown\"]");
+	public By dropDownProvince = By.name("shipping_state");
 	
 	
 	public void selectByIndex (int index) {		

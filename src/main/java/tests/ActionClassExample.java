@@ -2,7 +2,6 @@ package tests;
 
 import org.openqa.selenium.JavascriptExecutor;
 import org.testng.annotations.Test;
-
 import pageObjects.MenuPage;
 import pageObjects.ShopPage;
 import utils.BaseTest;

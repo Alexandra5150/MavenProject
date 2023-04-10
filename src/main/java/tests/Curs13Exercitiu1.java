@@ -32,10 +32,10 @@ public class Curs13Exercitiu1 extends BaseTest {
 				
 		ShippingPage check = new ShippingPage(driver);		
 		
-		check.selectByIndex(40);		
+		check.selectByIndex(41);		
 		assertEquals(check.getSelectedOptionCountry(), "Canada");
 				
-		check.selectByValue("Newfoundland and Labrador");		
+		check.selectByValue("NL");		
 		assertEquals(check.getSelectedOptionProvince(), "Newfoundland and Labrador");
 		
 		
