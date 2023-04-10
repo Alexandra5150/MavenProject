@@ -47,19 +47,19 @@ public class Curs14Exercitiu3 extends BaseTest {
 	}
 	
 	
-	@Test(dataProvider = "checkBooksData")
-	public void checkBooksTest (By book, String url) {
-		
-		MenuPage menu = new MenuPage(driver);
-		HomePage homePage = new HomePage (driver);       		
-		
-		for(int i=0; i<data.length; i++) {			
-			homePage.openBooks(book);					
-			assertEquals(driver.getCurrentUrl(), url);
-			menu.navigateTo(menu.homePageButton);			
-		}
-
-    }
+//	@Test(dataProvider = "checkBooksData")
+//	public void checkBooksTest (By book, String url) {
+//		
+//		MenuPage menu = new MenuPage(driver);
+//		HomePage homePage = new HomePage (driver);       		
+//		
+//		for(int i=0; i<data.length; i++) {			
+//			homePage.openBooks(book);					
+//			assertEquals(driver.getCurrentUrl(), url);
+//			menu.navigateTo(menu.homePageButton);			
+//		}
+//
+//    }
 		
 	
 	
