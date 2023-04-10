@@ -21,6 +21,9 @@ public class PostFormatsPage extends BaseTest {
 	public By timeRailInitialPosition = By.cssSelector("span[style=\"display: none; left: 0px;\"]");
 	public By volumeInitialPosition = By.cssSelector("div[style=\"left: 0px; width: 100%;\"]");
 	public By playSongButton = By.cssSelector("div[class=\"mejs-button mejs-playpause-button mejs-play\"]");
+	public By searchField = By.cssSelector("input[title=\"Search for:\"]");
+	
+	
 	
 	
 	public void dragAndDrop(By locator, int x, int y) {		

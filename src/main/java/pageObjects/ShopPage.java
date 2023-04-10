@@ -21,6 +21,7 @@ public class ShopPage extends BaseTest {
 	public By sliderInitialPosition = By.cssSelector("span[style='left: 0%;']");
 	public By sliderFinalPosition = By.cssSelector("span[style='left: 100%;']");
 	public By nextPageArrow = By.cssSelector("a[class=\"next page-numbers\"]");
+	public By addToCartButton = By.linkText("ADD TO CART");
 	
 	
 	public void navigateTo (By locator) {
