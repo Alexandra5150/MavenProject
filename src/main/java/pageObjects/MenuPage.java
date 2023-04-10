@@ -27,7 +27,8 @@ public class MenuPage {
 	public By blogLink = By.linkText("BLOG");
 	public By postFormatsLink = By.linkText("Post Formats");
 	public By homePageButton = By.cssSelector("div[class=\"top_panel_middle\"] a[href=\"https://keybooks.ro/\"]");
-	
+//	public By searchIcon = By.cssSelector("button[class*='search_submit']");
+//	public By searchField =  By.cssSelector("input[class='search_field']");
 	
 	//driver.findElement(By.linkText("Login")).click();
 	//     indentificare element                  + actiune pe element

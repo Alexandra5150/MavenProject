@@ -21,17 +21,21 @@ import com.google.common.io.Files;
 
 public class BaseTest {
 
-	public WebDriver driver;
+	public static WebDriver driver;//folosesc "static" ca sa folosesc basepage
 	public JavascriptExecutor jse;
+	public BasePage app;//obiect ca sa folosesc basepage
 	
 	@BeforeClass
 	public void setup() {
 		
 		driver = new EdgeDriver();
+		//driver = new FirefoxDriver();
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 		driver.get("https://keybooks.ro/");
 		jse = (JavascriptExecutor)driver;
+		
+		app = new BasePage();//ca sa folosesc basepage
 	}
 	
 	
