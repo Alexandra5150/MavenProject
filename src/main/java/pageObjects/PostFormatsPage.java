@@ -22,7 +22,8 @@ public class PostFormatsPage extends BaseTest {
 	public By volumeInitialPosition = By.cssSelector("div[style=\"left: 0px; width: 100%;\"]");
 	public By playSongButton = By.cssSelector("div[class=\"mejs-button mejs-playpause-button mejs-play\"]");
 	public By searchField = By.cssSelector("input[title=\"Search for:\"]");
-	
+	public By galleryFormat = (By.linkText("Gallery Format"));
+	public By awaitingModerationText = By.cssSelector("div[class=\"comment_not_approved\"]");
 	
 	
 	
@@ -32,13 +33,12 @@ public class PostFormatsPage extends BaseTest {
 		action.dragAndDropBy(element, x, y).perform();
 	}
 	
-	public void audioPostLink (By locator) {
+	public void navigateTo (By locator) {
 		driver.findElement(locator).click();				
 	}
 	
-	public void playSong (By locator) {
-		driver.findElement(locator).click();				
+	public boolean awaitingModerationTextIsDisplayed () {
+		return driver.findElement(awaitingModerationText).isDisplayed();
 	}
-	
 
 }

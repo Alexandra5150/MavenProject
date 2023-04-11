@@ -22,8 +22,8 @@ public class Curs14Exercitiu2 extends BaseTest {
 		menu.navigateTo(menu.postFormatsLink);
 		
 		PostFormatsPage postFormatsPage = new PostFormatsPage (driver);
-		postFormatsPage.audioPostLink(postFormatsPage.audioPost);
-		postFormatsPage.playSong(postFormatsPage.playSongButton);
+		postFormatsPage.navigateTo(postFormatsPage.audioPost);
+		postFormatsPage.navigateTo(postFormatsPage.playSongButton);
 		
 		postFormatsPage.dragAndDrop(postFormatsPage.volumeInitialPosition, -50, 0);
 		
