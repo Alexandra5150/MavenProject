@@ -2,15 +2,18 @@ package tests;
 
 import static org.testng.Assert.assertEquals;
 
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 import pageObjects.MenuPage;
 import pageObjects.ShopPage;
 import utils.BaseTest;
+import utils.TestNGListener;
 
+@Listeners(TestNGListener.class)
 public class DropdownExample extends BaseTest {
 	
-	//@Test
+	@Test
 	public void selectByValueTest () {
 		
 		MenuPage menu = new MenuPage(driver);
@@ -23,7 +26,7 @@ public class DropdownExample extends BaseTest {
 	}
 	
 	
-	//@Test
+	@Test
 	public void selectByIndex () {
 		
 		MenuPage menu = new MenuPage(driver);

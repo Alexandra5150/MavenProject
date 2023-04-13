@@ -5,6 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 import utils.BaseTest;
+import utils.Log;
 
 public class ContactsPage extends BaseTest {
 
@@ -30,7 +31,9 @@ public class ContactsPage extends BaseTest {
 	
 	
 	public void zoomMap(By locator) {
+		Log.info("Called method <zoomMap>");
 		WebElement iFrame = driver.findElement(iframe);
+		Log.info("Called method locator" + locator);
 		driver.switchTo().frame(iFrame);
 		driver.findElement(locator).click();		
 	}
