@@ -62,11 +62,10 @@ public class Curs12Exercitiu3 extends BaseTest {
 		cartPage.proceedToCheckout();
 		assertEquals(driver.getCurrentUrl(),"https://keybooks.ro/checkout/");
 		
-		assertTrue(((WebElement) cartPage.billingDetailsText).isDisplayed());
-		assertTrue(((WebElement) cartPage.additionalInformationText).isDisplayed());
-		
-		assertTrue(((WebElement) cartPage.billingDetailsText).isDisplayed());
-		
+        assertTrue(cartPage.getElement(cartPage.billingDetailsText).isDisplayed());
+        assertTrue(cartPage.getElement(cartPage.additionalInformationText).isDisplayed());
+
+        assertTrue(cartPage.getElement(cartPage.billingDetailsText).isDisplayed());
 	}
 	
 	
