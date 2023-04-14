@@ -36,6 +36,9 @@ public class MenuPage {
 	//driver.findElement(locator) ==> locator ==loginLink
 	//driver.findElement(loginLink)
 	
+    public WebElement getElement(By locator) {
+        return driver.findElement(locator);
+   }
 	
 	public void navigateTo (By locator) {
 		driver.findElement(locator).click();				

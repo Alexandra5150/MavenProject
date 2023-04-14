@@ -14,7 +14,7 @@ import pageObjects.ShopPage;
 public class Curs14Exercitiu2 extends BaseTest {
 	
 	@Test(priority = 1)
-	public void hooverBlog () {
+	public void hooverBlog () throws InterruptedException {
 		
 		MenuPage menu = new MenuPage(driver);
 		menu.hoverElement(menu.blogLink);
@@ -29,7 +29,7 @@ public class Curs14Exercitiu2 extends BaseTest {
 		
 		postFormatsPage.dragAndDrop(postFormatsPage.timeRailInitialPosition, 200, 0);
 		
-		
+		Thread.sleep(3000);
 	}
 		
 }

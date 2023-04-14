@@ -23,7 +23,15 @@ public class ShopPage extends BaseTest {
 	public By nextPageArrow = By.cssSelector("a[class=\"next page-numbers\"]");
 	public By addToCartButton = By.linkText("ADD TO CART");
 	
-	
+    public By firstBook = By.cssSelector("span[class = 'price'] ins>span");
+    public By lastBook = By.cssSelector("span[class = 'price'] bdi");
+    
+    
+    public WebElement getElement(By locator) {
+        return driver.findElement(locator);
+   }
+    
+    
 	public void navigateTo (By locator) {
 		driver.findElement(locator).click();				
 	}
