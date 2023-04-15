@@ -22,6 +22,7 @@ public class ShopPage extends BaseTest {
 	public By sliderFinalPosition = By.cssSelector("span[style='left: 100%;']");
 	public By nextPageArrow = By.cssSelector("a[class=\"next page-numbers\"]");
 	public By addToCartButton = By.linkText("ADD TO CART");
+	public By book1 = By.xpath("//a[contains(text(), \"A hundred and one receipes\")]");
 	
     public By firstBook = By.cssSelector("span[class = 'price'] ins>span");
     public By lastBook = By.cssSelector("span[class = 'price'] bdi");

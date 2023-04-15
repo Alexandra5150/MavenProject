@@ -19,12 +19,15 @@ public class MenuPage {
 	public By singleAuthorLink = By.linkText("SINGLE AUTHOR");
 	public By searchButton = By.cssSelector("div[class=\"search_form_wrap\"] button[title=\"Open search\"]");
 	public By shopLink = By.linkText("BOOKS");
+	public By shopLink2 = By.xpath("(//a[contains(text(), \"Books\")])[1]");
 	public By facebookIcon = By.cssSelector("div[class=\"top_panel_top_user_area\"] span[class=\"icon-facebook\"]");
 	public By twitterIcon = By.cssSelector("div[class=\"top_panel_top_user_area\"] span[class=\"icon-twitter\"]");
 	public By instagramIcon = By.cssSelector("div[class=\"top_panel_top_user_area\"] span[class=\"icon-instagramm\"]");
 	public By username = By.cssSelector("span[class=\"user_name\"]");
 	public By logoutButton = By.cssSelector("li[class=\"menu_user_logout\"]>a");
 	public By blogLink = By.linkText("BLOG");
+	public By blogLink2 = By.xpath("//a[contains(text(), \"Blog\")]");
+	public By classicLink = By.xpath("(//a[contains(text(), \"Classic\")])[1]");
 	public By postFormatsLink = By.linkText("Post Formats");
 	public By homePageButton = By.cssSelector("div[class=\"top_panel_middle\"] a[href=\"https://keybooks.ro/\"]");
 //	public By searchIcon = By.cssSelector("button[class*='search_submit']");
