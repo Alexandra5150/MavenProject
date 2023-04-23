@@ -9,7 +9,7 @@ import utils.BaseTest;
 
 public class XpathExample extends BaseTest{
 	
-	@Test(priority=1)
+	//@Test(priority=1)
 	public void xpathExample () throws InterruptedException {
 		
 		JavascriptExecutor jse =  (JavascriptExecutor)driver;
@@ -39,7 +39,7 @@ public class XpathExample extends BaseTest{
 	}
 	
 	
-	@Test(priority=2)
+	//@Test(priority=2)
 	public void xpathExample2() {
 		
 		JavascriptExecutor jse =  (JavascriptExecutor)driver;
@@ -66,6 +66,27 @@ public class XpathExample extends BaseTest{
 		
 		
 	}
-			
+	
+	
+	@Test	
+	public void xPathExample3() {
+		
+		//parent
+		driver.findElement(By.xpath("//a[contains(@class, 'popup_link')]/parent::li[@class='menu_user_login']")).click();
+	
+		//descendant si child
+		//  //ul[@id='menu_user']/descendant::form[contains(@class, 'popup_form')]/child::div[contains(@class, 'login_field')]/child::input[@id='log']]
+		WebElement username = driver.findElement(By.xpath("//ul[@id='menu_user']/descendant::form[contains(@class, 'popup_form')]/child::div[contains(@class, 'login_field')]/child::input[@id='log']"));
+		username.sendKeys("TestUser");
+
+		driver.findElement(By.xpath("//ul[@id='menu_user']/descendant::input[@id='password']")).sendKeys("12345@67890");
+	
+		//following sibling
+		driver.findElement(By.xpath("//div[contains(@class, 'login_field')]/following-sibling::div[contains(@class, 'remember_field')]/input ")).click();
+
+		//preceding
+		driver.findElement(By.xpath("//form[contains(@class, 'login_form')]/preceding::input[@class='submit_button']")).click();
+	
+	}		
 
 }

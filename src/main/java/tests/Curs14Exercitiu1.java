@@ -12,7 +12,7 @@ import utils.BaseTest;
 public class Curs14Exercitiu1 extends BaseTest {
 	
 	@Test
-	public void checkBookPrice () {
+	public void checkBookPrice () throws InterruptedException {
 		
 		MenuPage menu = new MenuPage(driver);
 		menu.navigateTo(menu.shopLink);
@@ -22,10 +22,11 @@ public class Curs14Exercitiu1 extends BaseTest {
 		
 		assertEquals(shop.getSelectedOption(), "Sort by price: low to high");
 		
-		shop.navigateTo(shop.nextPageArrow);
+		System.out.println(shop.getElement(shop.firstBook).getText());
+		System.out.println(shop.getElement(shop.firstBook).getText().substring(1));
 		
-        //tranformam textul in double si scoatem semnul $ cu substring pentru ale putea compara
-        double priceFirstElement = Double.parseDouble(shop.getElement(shop.firstBook).getText().substring(1));
+        //trasnformam textul in double si scoatem semnul $ cu substring pentru a le putea compara
+        double priceFirstElement = Double.parseDouble(shop.getElement(shop.firstBook).getText().substring(1));       
 
         shop.navigateTo(shop.nextPageArrow);
        

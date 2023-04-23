@@ -28,8 +28,8 @@ public class BaseTest {
 	@BeforeClass
 	public void setup() {
 		
-		driver = new EdgeDriver();
-		//driver = new FirefoxDriver();
+		//driver = new EdgeDriver();
+		driver = new FirefoxDriver();
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 		driver.get("https://keybooks.ro/");

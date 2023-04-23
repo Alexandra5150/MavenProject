@@ -27,7 +27,7 @@ public class Curs14Exercitiu2 extends BaseTest {
 		
 		postFormatsPage.dragAndDrop(postFormatsPage.volumeInitialPosition, -50, 0);
 		
-		postFormatsPage.dragAndDrop(postFormatsPage.timeRailInitialPosition, 200, 0);
+		postFormatsPage.dragAndDrop(postFormatsPage.timeRailInitialPosition, 400, 0);
 		
 		Thread.sleep(3000);
 	}
